@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -205,10 +205,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 25394882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea82f4bae3965a844af397b5be591cf1, type: 3}
+  m_Script: {fileID: 11500000, guid: f58ddb116d42e084e9e1039ff78f85a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 8
+  lifetime: 8
+  destination: {x: 0, y: 0}
+  isAlive: 1
+  rectTransform: {fileID: 25394885}
+  speed: 2
 --- !u!1 &223974226
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,10 +814,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1088502113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea82f4bae3965a844af397b5be591cf1, type: 3}
+  m_Script: {fileID: 11500000, guid: f58ddb116d42e084e9e1039ff78f85a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 10
+  lifetime: 5
+  destination: {x: 0, y: 0}
+  isAlive: 1
+  rectTransform: {fileID: 1088502114}
+  speed: 2
 --- !u!1 &1196894701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,14 +1676,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1904523520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f16c090b3be57408759caef87a89cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c08df17e1297f54090970a075e75fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1904523523}
   cardPrefabs:
   - {fileID: 1088502115}
   - {fileID: 25394883}
-  timeInterval: 1
   numCards: 5
   startX: -350
   startY: 200
