@@ -2,54 +2,51 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 public class CardLifeCycle : MonoBehaviour
 {
-    public float Lifetime;
-    public float Speed;
-
-    public bool IsAlive = true;
-
-    float m_XAxis, m_YAxis;
-
-    private RectTransform m_RectTransform;
+    public float lifetime;
+    public Vector2 destination;
+    public bool isAlive = true;
+    public RectTransform rectTransform;
+    public float speed = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_RectTransform = GetComponent<RectTransform>();
-        this.gameObject.SetActive(true);
+        rectTransform = GetComponent<RectTransform>();
         StartCoroutine(Timer());
     }
 
     public void SetPosition(float x, float y)
     {
-        m_XAxis = x;
-        m_YAxis = y;
+        rectTransform.anchoredPosition = new Vector2(x, y);
+        destination = rectTransform.anchoredPosition;
     }
 
     public float GetWidth()
     {
-        return m_RectTransform.sizeDelta.x;
+        return rectTransform.sizeDelta.x;
     }
 
     public void MoveBy(float x, float y)
     {
-        float Elapsed = Time.deltaTime;
-        m_XAxis += Math.Min(x, Math.Sign(x) * Speed * Elapsed);
-        m_YAxis += Math.Min(y, Math.Sign(y) * Speed * Elapsed);
+        destination.x += x;
+        destination.y += y;
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_RectTransform.anchoredPosition = new Vector2(m_XAxis, m_YAxis);
+        //Moves the GameObject from it's current position to destination over time
+        rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, destination, Time.deltaTime * speed);
     }
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(Lifetime);
-        IsAlive = false;
+        yield return new WaitForSeconds(lifetime);
+        isAlive = false;
     }
 }

@@ -13,45 +13,59 @@ public class CardManager : MonoBehaviour
     public float startY;  // the starting y position of the images
     public float margin;  // spacing between each image
 
-    private CardLifeCycle[] currentCards;
-    private CardLifeCycle[] nextCards;
+    private CardLifeCycle[] _currentCards;
+    private CardLifeCycle[] _nextCards;
 
-    private int cardCount = 0;
+    private int _cardsCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.currentCards= new CardLifeCycle[numCards];
-        this.nextCards= new CardLifeCycle[numCards];
+        _currentCards= new CardLifeCycle[numCards];
+        _nextCards= new CardLifeCycle[numCards];
+        
+        while (_cardsCount < numCards)
+        {
+            AddCard(startX, startY);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         ManageCards();
+        if (_cardsCount < numCards)
+        {
+            CardLifeCycle card = AddCard(startX, startY + 250);
+            card.MoveBy(0, -250);
+        }
     }
 
     void ManageCards()
     {
         float shiftBy = 0;
-        foreach (CardLifeCycle card in this.currentCards)
+        int j = 0;
+        
+        for (int i = 0; i < _cardsCount; i++)
         {
-            if (card == null)
+            if (_currentCards[i].isAlive)
             {
-                break;
-            }
-            if (card.IsAlive)
-            {
-                card.MoveBy(shiftBy, 0);
+                _currentCards[i].MoveBy(shiftBy, 0);
+                _nextCards[j++] = _currentCards[i];
             }
             else
             {
-                shiftBy -= card.GetWidth() + margin;
+                shiftBy -= _currentCards[i].GetWidth() + margin;
+                startX -= _currentCards[i].GetWidth() + margin;
+                Destroy(_currentCards[i].gameObject);
             }
         }
+
+        _currentCards = _nextCards;
+        _cardsCount = j;
     }
 
-    void AddCard(float x, float y)
+    CardLifeCycle AddCard(float x, float y)
     {
         int index = Random.Range(0, cardPrefabs.Count);  // randomly choose a card prefab index
 
@@ -59,7 +73,11 @@ public class CardManager : MonoBehaviour
 
         CardLifeCycle cardLife = card.GetComponent<CardLifeCycle>();
         cardLife.SetPosition(x, y);
+        cardLife.gameObject.SetActive(true);
 
-        currentCards[cardCount] = cardLife;
+        _currentCards[_cardsCount++] = cardLife;
+        startX += cardLife.GetWidth() + margin;
+
+        return cardLife;
     }
 }
