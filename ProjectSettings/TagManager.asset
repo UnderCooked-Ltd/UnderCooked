@@ -17,6 +17,7 @@ TagManager:
   - Knife_Position
   - Bread_Meat_Recipe
   - Burger_Recipe
+  - Plate
   layers:
   - Default
   - TransparentFX
