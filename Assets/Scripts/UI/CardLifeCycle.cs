@@ -1,23 +1,36 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 public class CardLifeCycle : MonoBehaviour
 {
-    public float lifetime;
     public Vector2 destination;
-    public bool isAlive = true;
     public RectTransform rectTransform;
     public float speed = 2f;
 
+    public bool isAlive = true;
+
+    public float lifetime;
+    public Image progressBar;
+    private float _remainingTime;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        _remainingTime = lifetime;
         StartCoroutine(Timer());
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        //Moves the GameObject from it's current position to destination over time
+        rectTransform.anchoredPosition = Vector2.Lerp(
+            rectTransform.anchoredPosition, destination, Time.deltaTime * speed);
+
+        //Update the progress bar
+        progressBar.fillAmount = _remainingTime / lifetime;
     }
 
     public void SetPosition(float x, float y)
@@ -37,16 +50,40 @@ public class CardLifeCycle : MonoBehaviour
         destination.y += y;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool IsMoving(double threshold = 10)
     {
-        //Moves the GameObject from it's current position to destination over time
-        rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, destination, Time.deltaTime * speed);
+        return Vector2.Distance(rectTransform.anchoredPosition, destination) > threshold;
     }
 
-    IEnumerator Timer()
+    private IEnumerator Timer()
     {
-        yield return new WaitForSeconds(lifetime);
+        while (_remainingTime > 0)
+        {
+            _remainingTime -= Time.deltaTime;
+            yield return null;
+        }
+
         isAlive = false;
+    }
+
+    public IEnumerator Scale(float duration, Vector3 targetScale)
+    {
+        var initialScale = rectTransform.localScale;
+        var timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            rectTransform.localScale = Vector3.Lerp(initialScale, targetScale, timer / duration);
+            yield return null;
+        }
+
+        rectTransform.localScale = targetScale;
+    }
+
+    public IEnumerator ScaleDown(float duration)
+    {
+        yield return StartCoroutine(Scale(duration, Vector3.zero));
+        Destroy(gameObject);
     }
 }
