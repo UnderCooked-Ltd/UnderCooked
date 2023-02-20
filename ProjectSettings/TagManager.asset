@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Raw_Beef
+  - Cooked_Beef
+  - Pan
+  - Bread
+  - Knife
+  - Tomato
+  - Sliced_Tomato
+  - Lettuce
+  - Sliced_Lettuce
+  - Position
+  - Knife_Position
+  - Bread_Meat_Recipe
+  - Burger_Recipe
   layers:
   - Default
   - TransparentFX
