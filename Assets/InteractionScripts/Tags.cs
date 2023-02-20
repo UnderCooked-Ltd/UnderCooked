@@ -13,6 +13,7 @@ public class Tags : MonoBehaviour
     public const string Sliced_Tomato_Tag  = "Sliced_Tomato";
     public const string Lettuce_Tag        = "Lettuce";
     public const string Sliced_Lettuce_Tag = "Sliced_Lettuce";
+    public const string Plate_Tag          = "Plate";
 
     public const string Position_Tag = "Position";
     public const string Knife_Position_Tag = "Knife_Position";
