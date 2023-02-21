@@ -10,18 +10,26 @@ public class PanInteraction : GrabbableObject
     private GameObject m_Cooked_Beef;
     private bool m_IsCooking = false;
     private bool m_IsCooked = false;
-    public int CookingTime_s;
-    private float elapsed_time = 0;
+    public float CookingTime_s = 5.0f;
+    private float elapsed_time = 0.0f;
 
     public void Start()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        /*for (int i = 0; i < this.transform.childCount; i++)
         {
             if (transform.GetChild(i).gameObject.tag == Tags.Raw_Beef_Tag)
-                m_Raw_Beef = transform.GetChild(i).gameObject;
+            {
+                m_Raw_Beef = transform.GetChild(i).gameObject;               
+            }
             else if (transform.GetChild(i).gameObject.tag == Tags.Cooked_Beef_Tag)
-                m_Cooked_Beef = transform.GetChild(i).gameObject;
-        }
+            {
+                m_Cooked_Beef = transform.GetChild(i).gameObject;               
+            }
+        }*/
+        m_Raw_Beef = this.transform.Find("raw_beef").gameObject;
+        m_Cooked_Beef = this.transform.Find("cooked_beef").gameObject;
+        m_IsCooked = false;
+        m_IsCooking = false;
     }
 
     public void Update()
@@ -29,7 +37,7 @@ public class PanInteraction : GrabbableObject
         if(m_IsCooking)
         {
             elapsed_time += Time.deltaTime;
-            if ((float)CookingTime_s < elapsed_time)
+            if (CookingTime_s < elapsed_time)
             {
                 m_Raw_Beef.SetActive(false);
                 m_Cooked_Beef.SetActive(true);
@@ -41,9 +49,11 @@ public class PanInteraction : GrabbableObject
 
     private void StartCooking()
     {
+        Debug.Log("Cooked Beef " + m_Cooked_Beef);
+        Debug.Log("Raw Beef " + m_Raw_Beef);
         m_IsCooking = true;
         m_Raw_Beef.SetActive(true);
-        elapsed_time = 0;
+        elapsed_time = 0.0f;
     }
 
     private bool CanPutObject(GameObject go)

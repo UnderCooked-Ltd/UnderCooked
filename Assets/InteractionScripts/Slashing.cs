@@ -12,15 +12,20 @@ public class Slashing : MonoBehaviour
 
     public void OnObjectExit()
     {
-        progressBar.gameObject.SetActive(true);
-        CurrentNumberOfSlash += 1;
-        progressBar.value = 100 * ((float)CurrentNumberOfSlash) / ((float)(NumberOfSlash-1));
-        if (CurrentNumberOfSlash == NumberOfSlash)
-        {
-            Instantiate(NewObject, transform.position, transform.rotation);
-            Destroy (gameObject);
-            progressBar.gameObject.SetActive(false);
-        }      
+        if (Hand.HasObject())
+            if (Hand.GetObject().tag == Tags.Knife_Tag)
+            {
+                Debug.Log("Slashing " + CurrentNumberOfSlash);
+                progressBar.gameObject.SetActive(true);
+                CurrentNumberOfSlash += 1;
+                 progressBar.value = 100 * ((float)CurrentNumberOfSlash) / ((float)(NumberOfSlash-1));
+                if (CurrentNumberOfSlash == NumberOfSlash)
+                {
+                    Instantiate(NewObject, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                    progressBar.gameObject.SetActive(false);
+                }
+            }
     }
 
     // Start is called before the first frame update

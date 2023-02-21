@@ -35,7 +35,7 @@ public class CounterTopInteraction : GrabbableObject
             else
             {
                 go.transform.position = m_Position.transform.position;
-                go.transform.rotation = Quaternion.identity;
+                go.transform.rotation = Hand.GetObject().transform.rotation;
             }
             go.GetComponent<Rigidbody>().isKinematic = true;
             Hand.DropObject();

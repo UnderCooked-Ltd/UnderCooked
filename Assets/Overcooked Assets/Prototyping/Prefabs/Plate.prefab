@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1287450643099171618}
   m_Layer: 0
   m_Name: lettuce
-  m_TagString: Untagged
+  m_TagString: Sliced_Lettuce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,11 +25,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350571642558790935}
-  m_LocalRotation: {x: 0.767958, y: -0.05184372, z: -0.0450833, w: 0.6368047}
-  m_LocalPosition: {x: -0.0007, y: 0.0358, z: -0.1398}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: 0.092739426, y: -0.06853776, z: 0.004780344, w: 0.99331725}
+  m_LocalPosition: {x: -0.0010762215, y: -0.1473001, z: -0.055039298}
+  m_LocalScale: {x: 0.61496246, y: 0.40735108, z: 0.60761595}
   m_Children: []
-  m_Father: {fileID: 262096600851310888}
+  m_Father: {fileID: 2380511112376429752}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3555475924821607356
@@ -81,6 +81,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1910427885120485306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2380511112376429752}
+  m_Layer: 0
+  m_Name: meal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2380511112376429752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910427885120485306}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -6.057731e-10, z: 0.007500001}
+  m_LocalScale: {x: 0.6504439, y: 0.99999976, z: 0.65044373}
+  m_Children:
+  - {fileID: 49870284458715109}
+  - {fileID: 8762517278184254750}
+  - {fileID: 8905719010126357948}
+  - {fileID: 5479161828968013093}
+  - {fileID: 424315745540875791}
+  - {fileID: 6963611392077984110}
+  - {fileID: 2085911090281188988}
+  m_Father: {fileID: 262096600851310888}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5277884869083089030
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +131,7 @@ GameObject:
   - component: {fileID: 2171878097211933641}
   m_Layer: 0
   m_Name: lettuce (1)
-  m_TagString: Untagged
+  m_TagString: Sliced_Lettuce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,11 +143,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5277884869083089030}
-  m_LocalRotation: {x: 0.66070664, y: -0.04428086, z: -0.05253075, w: 0.7474935}
-  m_LocalPosition: {x: -0.0049, y: 0.0053, z: -0.14}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0.061367564, y: -0.06845615, z: -0.005833551, w: 0.99574786}
+  m_LocalPosition: {x: -0.007533312, y: -0.14750008, z: -0.008148307}
+  m_LocalScale: {x: 0.61496246, y: 0.40325516, z: 0.61171204}
   m_Children: []
-  m_Father: {fileID: 262096600851310888}
+  m_Father: {fileID: 2380511112376429752}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 100.54999, y: 132.20999, z: 131.539}
 --- !u!33 &9133830348608100969
@@ -191,13 +228,7 @@ Transform:
   m_LocalPosition: {x: -3.0280144, y: 0.099999994, z: 1.7172018}
   m_LocalScale: {x: 1.5374116, y: 1.5374116, z: 1}
   m_Children:
-  - {fileID: 49870284458715109}
-  - {fileID: 8762517278184254750}
-  - {fileID: 8905719010126357948}
-  - {fileID: 5479161828968013093}
-  - {fileID: 424315745540875791}
-  - {fileID: 6963611392077984110}
-  - {fileID: 2085911090281188988}
+  - {fileID: 2380511112376429752}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -263,7 +294,7 @@ GameObject:
   - component: {fileID: 6513096304055501682}
   m_Layer: 0
   m_Name: bun_top
-  m_TagString: Untagged
+  m_TagString: Bread
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,11 +306,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5773896623147562273}
-  m_LocalRotation: {x: 0.6891554, y: -0, z: -0, w: 0.7246137}
-  m_LocalPosition: {x: 0, y: -0.0212, z: -0.276}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalRotation: {x: -0.025072807, y: -0, z: -0, w: 0.99968565}
+  m_LocalPosition: {x: 0, y: -0.2835001, z: 0.032593183}
+  m_LocalScale: {x: 0.92244697, y: 0.6008105, z: 0.9216371}
   m_Children: []
-  m_Father: {fileID: 262096600851310888}
+  m_Father: {fileID: 2380511112376429752}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 87.127, y: 0, z: 0}
 --- !u!33 &3961004240481934109
@@ -345,7 +376,7 @@ GameObject:
   - component: {fileID: 4163401587337459374}
   m_Layer: 0
   m_Name: cooked_steak
-  m_TagString: Untagged
+  m_TagString: Cooked_Beef
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,11 +388,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6034860359475827245}
-  m_LocalRotation: {x: 0.6902051, y: -0.04635564, z: -0.050709266, w: 0.7203448}
-  m_LocalPosition: {x: -0.0058, y: -0.0023, z: -0.034}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalRotation: {x: -0.021311967, y: -0.068635255, z: -0.0030784826, w: 0.99740946}
+  m_LocalPosition: {x: -0.008917093, y: -0.04150003, z: 0.0035361075}
+  m_LocalScale: {x: 0.6918327, y: 0.45044836, z: 0.6913895}
   m_Children: []
-  m_Father: {fileID: 262096600851310888}
+  m_Father: {fileID: 2380511112376429752}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 81.757, y: -72.573, z: -72.927}
 --- !u!33 &475317437761480116
@@ -426,7 +457,7 @@ GameObject:
   - component: {fileID: 1666490921256764046}
   m_Layer: 0
   m_Name: bun_bottom
-  m_TagString: Untagged
+  m_TagString: Bread
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,11 +469,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623340282013559537}
-  m_LocalRotation: {x: 0.6797883, y: 0.05590466, z: -0.05553468, w: 0.7291629}
-  m_LocalPosition: {x: -0.0116, y: -0.006, z: -0.0354}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalRotation: {x: -0.034913115, y: 0.0002616159, z: -0.07879951, w: 0.99627894}
+  m_LocalPosition: {x: -0.017833948, y: -0.04290002, z: 0.009224542}
+  m_LocalScale: {x: 0.9144959, y: 0.6095099, z: 0.92088866}
   m_Children: []
-  m_Father: {fileID: 262096600851310888}
+  m_Father: {fileID: 2380511112376429752}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 85.998, y: 4.952, z: -4.093}
 --- !u!33 &6757630082714327594
@@ -507,7 +538,7 @@ GameObject:
   - component: {fileID: 4012803078502297092}
   m_Layer: 0
   m_Name: tomato
-  m_TagString: Untagged
+  m_TagString: Sliced_Tomato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,11 +550,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7633497456777706708}
-  m_LocalRotation: {x: 0.6565949, y: -0.043991942, z: -0.05277295, w: 0.7511078}
-  m_LocalPosition: {x: -0.047, y: 0.0233, z: -0.075}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0.06683075, y: -0.068423115, z: -0.006209112, w: 0.99539614}
+  m_LocalPosition: {x: -0.072258234, y: -0.082500055, z: -0.035821695}
+  m_LocalScale: {x: 0.61496246, y: 0.40385613, z: 0.61111087}
   m_Children: []
-  m_Father: {fileID: 262096600851310888}
+  m_Father: {fileID: 2380511112376429752}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 100.97699, y: 134.683, z: 133.968}
 --- !u!33 &3558151099268103926
@@ -591,7 +622,7 @@ GameObject:
   - component: {fileID: 1249462909163751456}
   m_Layer: 0
   m_Name: tomato (1)
-  m_TagString: Untagged
+  m_TagString: Sliced_Tomato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -603,11 +634,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8745564897733426153}
-  m_LocalRotation: {x: 0.767958, y: -0.05184372, z: -0.0450833, w: 0.6368047}
-  m_LocalPosition: {x: -0.0065, y: -0.0009, z: -0.083}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: 0.092739426, y: -0.06853776, z: 0.004780344, w: 0.99331725}
+  m_LocalPosition: {x: -0.009993076, y: -0.09050004, z: 0.0013836713}
+  m_LocalScale: {x: 0.61496246, y: 0.40735108, z: 0.60761595}
   m_Children: []
-  m_Father: {fileID: 262096600851310888}
+  m_Father: {fileID: 2380511112376429752}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1736320415467642670

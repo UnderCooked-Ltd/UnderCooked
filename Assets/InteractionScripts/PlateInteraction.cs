@@ -73,6 +73,7 @@ public class PlateInteraction : GrabbableObject
         }
         else if (CanPutObject(Hand.GetObject()))
         {
+            Debug.Log("CLICK");
             ActivateIngredient(Hand.GetObject());
             RemoveObject(Hand.GetObject(), interactor);
         }

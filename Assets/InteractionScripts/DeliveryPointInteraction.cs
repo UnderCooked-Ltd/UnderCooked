@@ -28,13 +28,15 @@ public class DeliveryPointInteraction : GrabbableObject
                     bool found = false;
                     foreach (GameObject ing in m_Ingredients)
                         if (tag == ing.tag)
-                            found = true;
+                            found = ing.activeInHierarchy;
                     if (!found)
                         Bread_Meat = false;
                 }
                 if (Bread_Meat)
-                    // call card manager
+                {
+                    cardManager.ScheduleDestroy(Tags.Bread_Meat_Recipe_Tag);
                     return;
+                }
 
 
 
@@ -44,13 +46,15 @@ public class DeliveryPointInteraction : GrabbableObject
                     bool found = false;
                     foreach (GameObject ing in m_Ingredients)
                         if (tag == ing.tag)
-                            found = true;
+                            found = ing.activeInHierarchy;
                     if (!found)
                         Burger = false;
                 }
                 if (Burger)
-                    // call card manager
+                {
+                    cardManager.ScheduleDestroy(Tags.Burger_Recipe_Tag);
                     return;
+                }
 
                 
                 Hand.DeleteObject();
