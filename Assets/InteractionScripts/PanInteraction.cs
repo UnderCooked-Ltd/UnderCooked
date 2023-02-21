@@ -13,6 +13,13 @@ public class PanInteraction : GrabbableObject
     public float CookingTime_s = 5.0f;
     private float elapsed_time = 0.0f;
 
+    private bool IsOnStove = true;
+
+    public void setIsOnStove(bool v)
+    {
+        IsOnStove = v;
+    }
+
     public void Start()
     {
         /*for (int i = 0; i < this.transform.childCount; i++)
@@ -34,7 +41,7 @@ public class PanInteraction : GrabbableObject
 
     public void Update()
     {
-        if(m_IsCooking)
+        if(m_IsCooking && IsOnStove)
         {
             elapsed_time += Time.deltaTime;
             if (CookingTime_s < elapsed_time)
@@ -67,6 +74,7 @@ public class PanInteraction : GrabbableObject
         {
             base.OnSelectEnter(interactor);
             Hand.SetObject(this.transform.gameObject);
+            setIsOnStove(false);
         }
         else if (CanPutObject(Hand.GetObject()))
         {

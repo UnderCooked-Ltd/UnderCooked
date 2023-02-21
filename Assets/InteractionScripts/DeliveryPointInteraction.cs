@@ -21,7 +21,7 @@ public class DeliveryPointInteraction : GrabbableObject
                     if(m_Meal.transform.GetChild(i).gameObject.activeInHierarchy)
                         m_Ingredients.Add(m_Meal.transform.GetChild(i).gameObject);
                 }
-
+                Debug.Log("Number of ingredient : " + m_Ingredients.Count);
                 bool Bread_Meat = true;
                 foreach (string tag in Tags.Bread_Meat_Recipe)
                 {
